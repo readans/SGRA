@@ -11,7 +11,7 @@ en las clases. Contiene campos como
 el id de la clase, el id del estudiante
 y la nota final.
  */
-
+DROP TABLE definitiva;
 --CREATE
 create table definitiva
 (

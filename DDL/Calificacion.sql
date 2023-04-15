@@ -9,13 +9,14 @@ En esta tabla se guardan las calificaciones que los profesores
 asignan a los estudiantes en las clases. Contiene campos como 
 el id de la clase, el id del estudiante y la nota.
  */
-
+DROP TABLE calificacion;
 --CREATE
 create table calificacion
 (
     calificacion_id int IDENTITY(1,1) PRIMARY KEY,
     estudiante_id int FOREIGN KEY REFERENCES estudiante (estudiante_id),
-    curso_id int FOREIGN KEY REFERENCES curso (curso_id)
+    actividad_id int FOREIGN KEY REFERENCES actividad (actividad_id),
+    nota_id int FOREIGN KEY REFERENCES nota (nota_id)
 );
 --INSERT    
 INSERT INTO calificacion
