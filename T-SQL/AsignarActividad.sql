@@ -30,5 +30,5 @@ BEGIN
 END
 GO
 -- example to execute the stored procedure we just created
-EXECUTE dbo.AsignarActividad 1, 5
+EXECUTE dbo.AsignarActividad 7, 1
 GO

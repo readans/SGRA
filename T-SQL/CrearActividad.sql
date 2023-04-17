@@ -19,7 +19,7 @@ CREATE PROCEDURE dbo.GenerarActividad
 AS
     DECLARE @cursoValido INT, @actividadId int, @cursoInactivo int = 6;
 BEGIN
-    -- body of the stored procedure
+    -- body of the stored procedurepo
     SET @cursoValido = (SELECT curso_id FROM curso WHERE estado_curso_id != @cursoInactivo AND curso_id = @cursoId);
     IF @cursoValido IS NOT NULL
         BEGIN
@@ -32,5 +32,5 @@ BEGIN
 END
 GO
 -- example to execute the stored procedure we just created
-EXECUTE dbo.GenerarActividad 1, 'Reconocimiento del entorno packet tracer', '2023/04/22'
+EXECUTE dbo.GenerarActividad 5, 'Preparcial física', '2023/04/22'
 GO

@@ -48,6 +48,7 @@ BEGIN
     END;
     ELSE
         PRINT 'Estudiante ya matriculado';
+        
 END
 GO
 -- example to execute the stored procedure we just created

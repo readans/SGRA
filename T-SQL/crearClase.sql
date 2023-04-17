@@ -29,5 +29,5 @@ BEGIN
 END
 GO
 -- example to execute the stored procedure we just created
-EXECUTE dbo.crearClase 1, 3, '2023/04/16'
+EXECUTE dbo.crearClase 1, 3, '2023/04/21'
 GO

@@ -24,15 +24,17 @@ BEGIN
 
     IF @actividadEstudiante IS NOT NULL
         BEGIN
-        SET @calificacionId = (SELECT a.actividad_id FROM calificacion ce INNER JOIN estudiante e ON ce.estudiante_id = e.estudiante_id INNER JOIN actividad a ON a.actividad_id = ce.actividad_id);
+        SET @calificacionId = (SELECT ce.calificacion_id FROM calificacion ce INNER JOIN estudiante e ON ce.estudiante_id = e.estudiante_id INNER JOIN actividad a ON a.actividad_id = ce.actividad_id WHERE e.estudiante_id = @estudianteId AND ce.calificacion_id = @calificacionId);
         IF @calificacionId IS NULL
             BEGIN
             INSERT INTO calificacion(estudiante_id, actividad_id, nota_id) VALUES (@estudianteId, @actividadId, @notaId);
+            SET @calificacionId = (SCOPE_IDENTITY());
         END
         ELSE
             BEGIN
             UPDATE calificacion SET nota_id = @notaId WHERE estudiante_id = @estudianteId AND actividad_id = @actividadId;
         END;
+        SELECT * FROM calificacion c INNER JOIN nota n ON c.nota_id = n.nota_id WHERE calificacion_id = @calificacionId;
         PRINT 'Calificación realizada';
     END
     ELSE
@@ -40,5 +42,5 @@ BEGIN
 END
 GO
 -- example to execute the stored procedure we just created
-EXECUTE dbo.calificar 2, 8, 3
+EXECUTE dbo.calificar 2, 8, 5
 GO

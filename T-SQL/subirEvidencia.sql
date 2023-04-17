@@ -32,5 +32,5 @@ BEGIN
 END
 GO
 -- example to execute the stored procedure we just created
-EXECUTE dbo.subirEvidencia 2, 8, 'http://evidencia.com/files/evidencia.pdf'
+EXECUTE dbo.subirEvidencia 1, 8, 'http://evidencia.com/files/evidencia.pdf'
 GO

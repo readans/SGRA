@@ -17,6 +17,7 @@ create table curso
     tipo_estudio_id int FOREIGN KEY REFERENCES tipo_estudio (tipo_estudio_id),
     asignatura_id int FOREIGN KEY REFERENCES asignatura (asignatura_id),
     periodo_id int FOREIGN KEY REFERENCES periodo (periodo_id),
+    estado_curso_id int FOREIGN KEY REFERENCES estado_curso (estado_curso_id),
     anio varchar(4)
 );
 
