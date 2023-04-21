@@ -1,0 +1,1 @@
+CREATE TRIGGER actualizar_definitiva ON calificacion AFTER INSERTASBEGIN UPDATE definitiva SET nota_id = (SELECT TOP 1 nota_id FROM inserted) WHERE estudiante_id = (SELECT estudiante_id FROM inserted) AND curso_id = (SELECT curso_id FROM actividad WHERE actividad_id = (SELECT actividad_id FROM inserted))END
